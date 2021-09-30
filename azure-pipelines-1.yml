@@ -30,7 +30,4 @@ steps:
     artifactoryDeployService: 'jfrog'
     targetDeployReleaseRepo: 'default-maven-local'
     targetDeploySnapshotRepo: 'default-maven-local'
-    collectBuildInfo: true
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
 
