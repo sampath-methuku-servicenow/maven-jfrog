@@ -19,7 +19,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'clean package'
 - task: ArtifactoryMaven@2
   inputs:
     mavenPomFile: 'pom.xml'
@@ -31,6 +31,6 @@ steps:
     targetDeployReleaseRepo: 'default-maven-local'
     targetDeploySnapshotRepo: 'default-maven-local'
     collectBuildInfo: true
-    buildName: 'sample'
-    buildNumber: '33'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
 
