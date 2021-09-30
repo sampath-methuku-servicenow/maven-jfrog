@@ -23,7 +23,7 @@ steps:
 - task: ArtifactoryMaven@2
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'install'
+    goals: 'install deploy'
     artifactoryResolverService: 'jfrog'
     targetResolveReleaseRepo: 'default-maven-virtual'
     targetResolveSnapshotRepo: 'default-maven-virtual'
@@ -31,6 +31,6 @@ steps:
     targetDeployReleaseRepo: 'default-maven-local'
     targetDeploySnapshotRepo: 'default-maven-local'
     collectBuildInfo: true
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
+    buildName: 'sample'
+    buildNumber: '33'
 
