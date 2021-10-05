@@ -68,17 +68,7 @@
         <name>a0wf5lructqlr-artifactory-primary-0-snapshots</name>
         <url>https://sampathmethuku.jfrog.io/artifactory/default-maven-local</url>
     </snapshotRepository>
-    
-           <repository>
-  <id>azure</id>
-  <url>https://sampathmethuku.pkgs.visualstudio.com/_packaging/azure/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>       
+       
                   
                   
 </distributionManagement>
