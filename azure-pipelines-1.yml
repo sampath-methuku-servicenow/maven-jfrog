@@ -65,6 +65,7 @@ steps:
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    module: 'javaparser-maven-sample-4.0-SNAPSHOT'
     includeEnvVars: true
     failNoOp: true
 
