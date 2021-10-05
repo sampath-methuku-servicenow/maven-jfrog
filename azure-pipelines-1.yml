@@ -54,7 +54,7 @@ steps:
       {
         "files": [
           {
-            "pattern": "javaparser-maven-sample-4.0-SNAPSHOT*.jar"
+            "pattern": "javaparser-maven-sample-4.0-SNAPSHOT*.jar",
             "target": "default-maven-local"
           }
         ]
