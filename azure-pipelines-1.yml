@@ -28,7 +28,7 @@ steps:
   inputs:
     command: 'set'
     artifactoryService: 'jfrog'
-    setProps: 'buildNumber:12,buildId=sampel'
+    setProps: 'buildNumber=12,buildId=sampel'
     specSource: 'taskConfiguration'
     fileSpec: |
       {
