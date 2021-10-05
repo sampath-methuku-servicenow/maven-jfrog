@@ -31,6 +31,21 @@ steps:
     buildNumber: '$(Build.BuildNumber)'
     projectKey: 'projectKeyyyy'
 
+- task: ArtifactoryProperties@1
+  inputs:
+    command: 'set'
+    artifactoryService: 'jfrog'
+    setProps: 'buildNumber=12;buildId=sampel'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "javaparser-maven-sample-4.0-SNAPSHOT*.jar",
+            "target": "default-maven-local"
+          }
+        ]
+      }
 - task: ArtifactoryGenericUpload@2
   inputs:
     artifactoryService: 'jfrog'
@@ -50,19 +65,5 @@ steps:
     module: 'javaparser-maven-sample-4.0-SNAPSHOT'
     includeEnvVars: true
     failNoOp: true
-- task: ArtifactoryProperties@1
-  inputs:
-    command: 'set'
-    artifactoryService: 'jfrog'
-    setProps: 'buildNumber=12;buildId=sampel'
-    specSource: 'taskConfiguration'
-    fileSpec: |
-      {
-        "files": [
-          {
-            "pattern": "javaparser-maven-sample-4.0-SNAPSHOT*.jar",
-            "target": "default-maven-local"
-          }
-        ]
-      }
+
 
