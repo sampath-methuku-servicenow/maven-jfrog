@@ -24,6 +24,12 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     projectKey: '$(Build.BuildUri)'
+- task: ArtifactoryPublishBuildInfo@1
+  inputs:
+    artifactoryService: 'jfrog'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    projectKey: 'projectKeyyyy'
 
 - task: ArtifactoryGenericUpload@2
   inputs:
