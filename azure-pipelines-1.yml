@@ -48,6 +48,7 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     projectKey: '$(Build.BuildUri)'
+    includeEnvVars: true
 
 
 
