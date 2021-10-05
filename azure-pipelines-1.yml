@@ -24,31 +24,6 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     projectKey: '$(Build.BuildUri)'
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean package'
-- task: ArtifactoryMaven@2
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'install'
-    artifactoryResolverService: 'jfrog'
-    targetResolveReleaseRepo: 'default-maven-virtual'
-    targetResolveSnapshotRepo: 'default-maven-virtual'
-    artifactoryDeployService: 'jfrog'
-    targetDeployReleaseRepo: 'default-maven-local'
-    targetDeploySnapshotRepo: 'default-maven-local'
-    collectBuildInfo: true
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
-    projectKey: '$(Build.BuildUri)'
-    includeEnvVars: true
 - task: ArtifactoryGenericUpload@2
   inputs:
     artifactoryService: 'jfrog'
