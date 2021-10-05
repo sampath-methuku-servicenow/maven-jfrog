@@ -24,6 +24,20 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     projectKey: '$(Build.BuildUri)'
+- task: ArtifactoryProperties@1
+  inputs:
+    command: 'set'
+    artifactoryService: 'jfrog'
+    setProps: 'buildNumber:12,buildId=sampel'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "*.jar"
+          }
+        ]
+      }
 - task: ArtifactoryGenericUpload@2
   inputs:
     artifactoryService: 'jfrog'
