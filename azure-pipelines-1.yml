@@ -49,10 +49,25 @@ steps:
     buildNumber: '$(Build.BuildNumber)'
     projectKey: '$(Build.BuildUri)'
     includeEnvVars: true
-- task: ArtifactoryPublishBuildInfo@1
+- task: ArtifactoryGenericUpload@2
   inputs:
     artifactoryService: 'jfrog'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "*.jar",
+            "target": "default-maven-local"
+          }
+        ]
+      }
+    collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    includeEnvVars: true
+    failNoOp: true
+
+    
 
 
