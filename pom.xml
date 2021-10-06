@@ -60,17 +60,14 @@
          <distributionManagement>
     <repository>
         <id>central</id>
-        <name>a0wf5lructqlr-artifactory-primary-0-releases</name>
-        <url>https://sampathmethuku.jfrog.io/artifactory/default-maven-local</url>
+        <name>releases</name>
+        <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>a0wf5lructqlr-artifactory-primary-0-snapshots</name>
-        <url>https://sampathmethuku.jfrog.io/artifactory/default-maven-local</url>
+        <name>maven-snapshots</name>
+        <url>http://localhost:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
-       
-                  
-                  
 </distributionManagement>
          
 </project>
