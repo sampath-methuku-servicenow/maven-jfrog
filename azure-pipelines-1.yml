@@ -22,7 +22,7 @@ steps:
     targetDeploySnapshotRepo: 'default-maven-local'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
+    buildNumber: '$(Build.BuildId)'
     projectKey: '$(Build.BuildUri)'
 
 - task: ArtifactoryProperties@1
@@ -55,7 +55,7 @@ steps:
       }
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
+    buildNumber: '$(Build.BuildId)'
     module: 'javaparser-maven-sample-4.0-SNAPSHOT'
     includeEnvVars: true
     failNoOp: true
